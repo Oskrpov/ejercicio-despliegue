@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: default
+
+commonLabels:
+  app: sample-api
+
+configMapGenerator:
+- name: sample-api
+  envs:
+  - variables.properties
+
+resources:
+- deployment.yaml
+- service.yaml
+- hpa.yaml
+
+commonAnnotations:
+  product: semillero
