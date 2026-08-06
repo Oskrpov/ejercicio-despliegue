@@ -6,7 +6,6 @@ metadata:
     app: oscar-sample-api
     component: api
 spec:
-  replicas: 1
   revisionHistoryLimit: 3
   strategy:
     type: RollingUpdate
