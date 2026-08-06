@@ -1,14 +1,14 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: sample-api
+  name: oscar-sample-api
   labels:
-    app: sample-api
+    app: oscar-sample-api
     component: api
 spec:
   scaleTargetRef:
     kind: Deployment
-    name: sample-api
+    name: oscar-sample-api
     apiVersion: apps/v1
   minReplicas: 1
   maxReplicas: 3

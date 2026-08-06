@@ -3,10 +3,10 @@ kind: Kustomization
 namespace: oscar
 
 commonLabels:
-  app: sample-api
+  app: oscar-sample-api
 
 configMapGenerator:
-- name: sample-api
+- name: oscar-sample-api
   envs:
   - variables.properties
 

@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample-api
+  name: oscar-sample-api
   labels:
-    app: sample-api
+    app: oscar-sample-api
     component: api
 spec:
   replicas: 1
@@ -15,17 +15,17 @@ spec:
       maxSurge: 75%
   selector:
     matchLabels:
-      app: sample-api
+      app: oscar-sample-api
   template:
     metadata:
       annotations:
         cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
       labels:
-        app: sample-api
+        app: oscar-sample-api
         component: api
     spec:
       containers:
-      - name: sample-api
+      - name: oscar-sample-api
         image: ghcr.io/stefanprodan/podinfo:6.6.2
         ports:
         - name: http
@@ -33,7 +33,7 @@ spec:
           protocol: TCP
         envFrom:
         - configMapRef:
-            name: sample-api
+            name: oscar-sample-api
         resources:
           requests:
             memory: 64Mi
