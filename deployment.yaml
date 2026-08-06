@@ -54,7 +54,7 @@ spec:
         readinessProbe:
           failureThreshold: 3
           httpGet:
-            path: /periferia
+            path: /readiz
             port: http
             scheme: HTTP
           initialDelaySeconds: 5
